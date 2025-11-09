@@ -33,6 +33,10 @@ And visualization:
 
 <img width="1602" height="1019" alt="image" src="https://github.com/user-attachments/assets/c5d70ffb-3b81-40bd-9a35-78a261a8a77f" />
 
+And lastly a computed TCP:
+
+<img width="1002" height="1028" alt="image" src="https://github.com/user-attachments/assets/357c2225-9063-49c8-adae-088e4d02175f" />
+
 
 ### Phase 2: Coordinate Interpolation & Motion Planning
 - [ ] Define coordinate transformation (game world → robot workspace)
