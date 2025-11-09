@@ -26,7 +26,16 @@ Ideally we want in the end to mount a "fictive" seat to the robotic tool center 
 - [ ] Test with multiple coaster designs
 
 Phase 1 is complete with data extraction:
+
 <img width="408" height="134" alt="image" src="https://github.com/user-attachments/assets/47121083-3a14-419b-9f03-4d0936c18374" />
+
+And visualization:
+
+<img width="1602" height="1019" alt="image" src="https://github.com/user-attachments/assets/c5d70ffb-3b81-40bd-9a35-78a261a8a77f" />
+
+And lastly a computed TCP:
+
+<img width="1002" height="1028" alt="image" src="https://github.com/user-attachments/assets/357c2225-9063-49c8-adae-088e4d02175f" />
 
 
 ### Phase 2: Coordinate Interpolation & Motion Planning
