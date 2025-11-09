@@ -2,9 +2,15 @@
 
 A project to transform an ABB IRB-6600 industrial robotic manipulator into a motion simulator synchronized with NoLimits Coaster 2.
 
+Special thanks to https://github.com/bestdani/py_nl2telemetry/tree/public for the NL2 data. 
+
 ## Project Overview
 
 This project extracts real-time motion data from NoLimits Coaster 2 (Steam) and translates it into robotic coordinates for the ABB IRB-6600 manipulator. The system simulates a coaster seat mounted to the robot's TCP (Tool Center Point), providing a physical motion experience synchronized with the virtual roller coaster.
+
+<img width="1695" height="905" alt="image" src="https://github.com/user-attachments/assets/49047968-2853-4378-82df-677828dab8fa" />
+
+Ideally we want in the end to mount a "fictive" seat to the robotic tool center point (TCP). Thus a conversion between actual movements in the game and the seat will be transformed. Seat goes backwards when coast goes uphill, etc etc. 
 
 ## Project Checklist
 
@@ -18,6 +24,10 @@ This project extracts real-time motion data from NoLimits Coaster 2 (Steam) and 
 - [x] Add data validation and error handling
 - [x] Create data logging system for debugging
 - [ ] Test with multiple coaster designs
+
+Phase 1 is complete with data extraction:
+<img width="408" height="134" alt="image" src="https://github.com/user-attachments/assets/47121083-3a14-419b-9f03-4d0936c18374" />
+
 
 ### Phase 2: Coordinate Interpolation & Motion Planning
 - [ ] Define coordinate transformation (game world → robot workspace)
