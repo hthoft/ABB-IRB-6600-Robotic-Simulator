@@ -163,18 +163,4 @@ class CoasterState:
         }
 
 
-@dataclass
-class TelemetryMessage:
-    """
-    Raw telemetry message from NoLimits 2.
-    
-    NoLimits 2 sends UDP telemetry data in a specific binary format.
-    This class represents the parsed message.
-    """
-    message_type: int
-    frame_number: int
-    state: Optional[CoasterState] = None
-    
-    def is_state_message(self) -> bool:
-        """Check if this is a state update message (vs control message)."""
-        return self.message_type == 1 and self.state is not None
+
