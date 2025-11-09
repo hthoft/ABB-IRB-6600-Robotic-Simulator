@@ -6,14 +6,14 @@ game:
   
   # Game connection settings
   connection:
-    method: "memory_reading"  # Options: memory_reading, api, network
+    method: "udp_telemetry"  # Options: udp_telemetry (implemented)
     
-    # For memory reading approach
-    process_name: "NoLimits 2.exe"
-    
-    # For network API approach (if available)
-    host: "localhost"
-    port: 15151
+    # UDP Telemetry settings (ACTIVE - Currently Implemented)
+    host: "127.0.0.1"       # Localhost (NoLimits 2 IP address)
+    send_port: 15151        # Port to send requests to NoLimits 2
+    receive_port: 15152     # Port to receive telemetry data on
+    buffer_size: 1024       # UDP receive buffer size (bytes)
+    timeout: 5.0            # Connection timeout (seconds)
     
   # Data extraction settings
   data:
