@@ -1,0 +1,85 @@
+# Game Interface Configuration Template
+# Copy this to game_config.yaml and fill in your specific values
+
+game:
+  name: "NoLimits Coaster 2"
+  
+  # Game connection settings
+  connection:
+    method: "memory_reading"  # Options: memory_reading, api, network
+    
+    # For memory reading approach
+    process_name: "NoLimits 2.exe"
+    
+    # For network API approach (if available)
+    host: "localhost"
+    port: 15151
+    
+  # Data extraction settings
+  data:
+    # Update rate (Hz)
+    update_rate: 100
+    
+    # Data fields to extract
+    extract_position: true
+    extract_velocity: true
+    extract_acceleration: true
+    extract_orientation: true
+    extract_g_forces: true
+    
+    # Coordinate system
+    coordinate_system: "right_handed_z_up"
+    
+  # Motion scaling
+  scaling:
+    # Overall motion scale factor
+    # 1.0 = full coaster motion, 0.5 = half motion, etc.
+    global_scale: 0.3
+    
+    # Individual axis scaling
+    scale_x: 1.0
+    scale_y: 1.0
+    scale_z: 1.0
+    
+    # Rotation scaling
+    scale_roll: 0.5
+    scale_pitch: 0.5
+    scale_yaw: 0.5
+    
+    # Maximum motion bounds (meters in game space)
+    max_translation: 10.0
+    max_rotation: 45.0  # degrees
+    
+  # Filters
+  filtering:
+    # Enable smoothing filter
+    enable_smoothing: true
+    
+    # Low-pass filter cutoff frequency (Hz)
+    lowpass_cutoff: 10.0
+    
+    # Remove high-frequency noise
+    enable_noise_reduction: true
+
+# Performance settings
+performance:
+  # Buffer size for motion data (frames)
+  buffer_size: 10
+  
+  # Enable predictive buffering
+  enable_prediction: true
+  
+  # Prediction lookahead (seconds)
+  prediction_lookahead: 0.05
+
+# Testing and debugging
+debug:
+  # Record all game data to file
+  enable_recording: false
+  recording_path: "data/samples/game_recording.csv"
+  
+  # Visualize data stream
+  enable_visualization: false
+  
+  # Print debug information
+  verbose: false

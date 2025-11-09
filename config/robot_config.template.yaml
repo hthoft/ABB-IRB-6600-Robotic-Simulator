@@ -1,0 +1,85 @@
+# Robot Configuration Template
+# Copy this to robot_config.yaml and fill in your specific values
+
+robot:
+  model: "IRB 6600"
+  variant: "225/2.55"  # Payload/reach variant
+  
+  # Robot controller connection
+  controller:
+    ip_address: "192.168.125.1"
+    port: 5000
+    protocol: "tcp"  # tcp or udp
+    
+  # Workspace limits (mm) - conservative values for safety
+  workspace:
+    x_min: -2000
+    x_max: 2000
+    y_min: -2000
+    y_max: 2000
+    z_min: 0
+    z_max: 2500
+    
+  # TCP configuration (Tool Center Point)
+  tcp:
+    name: "seat_mount"
+    # Offset from flange to seat center (mm)
+    offset_x: 0
+    offset_y: 0
+    offset_z: 500
+    # Tool weight (kg)
+    weight: 85  # Includes seat and mounting
+    # Center of gravity offset from TCP (mm)
+    cog_x: 0
+    cog_y: 0
+    cog_z: -200
+    
+  # Motion limits
+  limits:
+    # Joint velocity limits (degrees/second)
+    max_joint_velocity: [100, 90, 90, 150, 120, 190]
+    
+    # Cartesian velocity limit (mm/s)
+    max_tcp_velocity: 1000
+    
+    # Cartesian acceleration limit (mm/s²)
+    max_tcp_acceleration: 2000
+    
+    # Maximum jerk limit (mm/s³)
+    max_jerk: 5000
+
+# Safety configuration
+safety:
+  # Emergency stop timeout (seconds)
+  estop_timeout: 0.5
+  
+  # Watchdog timeout (seconds)
+  watchdog_timeout: 1.0
+  
+  # Heartbeat interval (seconds)
+  heartbeat_interval: 0.1
+  
+  # Maximum allowed latency (seconds)
+  max_latency: 0.05
+  
+  # Safe home position (joint angles in degrees)
+  home_position: [0, -30, 30, 0, 60, 0]
+  
+  # Enable simulation mode (no real robot commands)
+  simulation_mode: true
+
+# Logging configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  
+  # Log file paths
+  application_log: "data/logs/application.log"
+  safety_log: "data/logs/safety.log"
+  motion_log: "data/logs/motion.log"
+  
+  # Log rotation
+  max_file_size_mb: 100
+  backup_count: 5
+  
+  # Enable performance logging
+  enable_performance_logging: true
